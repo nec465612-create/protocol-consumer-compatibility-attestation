@@ -1,0 +1,21 @@
+Protocol Consumer Compatibility Attestation exact revision manifest
+
+Algorithm:
+- Candidate paths are all release files except STAGE1.md, STAGE2.md, artifacts/, .pytest_cache/, __pycache__/, and this file.
+- Hash each file's raw bytes with SHA-256 and lowercase the hexadecimal digest.
+- Normalize relative paths to POSIX separators and sort them by ordinal path order.
+- Join the path=hash lines with LF and no trailing LF; hash those UTF-8 bytes with SHA-256 to obtain the revision root.
+
+REVISION_ROOT_SHA256=a8ce1c7c9e005e6d6a8acf316469a1e14dbe559d161dafc4f664702e856e7b7f
+
+.gitignore=bf0d61b77e0150a7ba247c6450efaed0d48cb8970e0df8393ebe1fcc9a6527a1
+contracts/protocol_consumer_compatibility_attestation.py=225859c6acd29564d8f1dd01644966a880122ee32eddd67bc98d44cf01a21694
+README.md=bca02c94b53be73b7ab5f0826e9c922c18f9d538b4d43971b68b4e25469f3922
+requirements.txt=8b8d878646ca54415c9f6848ba984fe1137f1503c398726e228e39ed360b8e63
+SPECIFICATION.md=0342abdefc6bc648069af5fa41aef356ae40fde65030c7c2a048aa2bd53c3305
+tests/__init__.py=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+tests/direct/__init__.py=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+tests/direct/test_protocol_consumer_compatibility_attestation.py=9bb5f55d0a8eb8700eccda5dad4b1731f56f50a11dfc9ffa37275b14ece85b24
+tests/integration/__init__.py=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+tests/integration/test_protocol_consumer_compatibility_attestation.py=f6b8862bd60ddce060b69e549a55ebf7c33d62ee9155636463b2e69e3433726d
+verification/e2e-matrix.md=bc017b525deeb4d0d97792ee43281df8f6abc6f735ab56f66bc0993700e1d1cf
