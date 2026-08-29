@@ -1,0 +1,32 @@
+{
+  "source_evidence": {
+    "producer_url": "https://raw.githubusercontent.com/octocat/Hello-World/762941318ee16e59dabbacb1b4049eec22f0d303/README",
+    "producer_sha256": "03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340",
+    "consumer_url": "https://raw.githubusercontent.com/octocat/Spoon-Knife/d0dd1f61b33d64e29d8bc1372a94ef6a2fee76a9/README.md",
+    "consumer_sha256": "f93aba3ff091ee0b498ae165ff08453620f9802fc6098662e0b9ce57b7273e6d"
+  },
+  "scenarios": {
+    "compatible": {
+      "producer_revision": "protocol-v2",
+      "consumer_revision": "consumer-v1",
+      "producer_excerpt": "Protocol-v2 keeps the same endpoint, response fields, error semantics, and consumer-visible behavior. This is a non-breaking compatibility change.",
+      "consumer_excerpt": "Consumer-v1 requires the existing endpoint, response fields, error semantics, and behavior; no additional acknowledgement is required."
+    },
+    "conditional": {
+      "producer_revision": "protocol-v2",
+      "consumer_revision": "consumer-v1",
+      "producer_excerpt": "Protocol-v2 adds an optional response field while preserving all required consumer behavior. The named consumer must acknowledge the documented optional field.",
+      "consumer_excerpt": "Consumer-v1 accepts additive optional response fields only after named acknowledgement; all required fields and semantics remain unchanged."
+    },
+    "incompatible": {
+      "producer_revision": "protocol-v2",
+      "consumer_revision": "consumer-v1",
+      "producer_excerpt": "For consumer-v1, protocol-v2 omits the mandatory response field `account_id` from every response. The consumer-v1 response schema requires that field, so this is an explicit breaking change and remediation is required.",
+      "consumer_excerpt": "Consumer-v1 requires `account_id` in every response. Any protocol-v2 response without `account_id` is incompatible, is a breaking change, and requires remediation."
+    },
+    "digest_failure": {
+      "producer_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+      "expected_state": "LOCKED, assessment_version 0, activation_eligible false"
+    }
+  }
+}
