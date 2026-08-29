@@ -4,7 +4,7 @@ Protocol Consumer Compatibility Attestation is a small GenLayer Intelligent Cont
 
 ## Status
 
-Implementation and local verification are in progress. No Studionet deployment or public GitHub release is claimed in this revision.
+Released and verified. The exact contract source is deployed on GenLayer Studionet at `0xe89ecB9D17F344e314B067521BA2f1cc4DedB428`; the deployed bytes match the local source SHA-256 `225859c6acd29564d8f1dd01644966a880122ee32eddd67bc98d44cf01a21694`. The full live Studionet E2E matrix passed (`7 passed`), and the published package is available at https://github.com/nec465612-create/protocol-consumer-compatibility-attestation.
 
 ## Why GenLayer
 
